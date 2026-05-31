@@ -17,8 +17,9 @@ export default defineConfig({
 	site,base,
 	integrations: [
 		starlight({
-			title: 'My Docs',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			title: 'Aras Forum',
+			favicon: '/favicon.svg',
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/Just-Tamizha/aras-forum' }],
 			sidebar: [
 				{
 					label: 'Guides',
