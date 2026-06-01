@@ -1,0 +1,6 @@
+:root {
+  --sl-font: 'Poppins', sans-serif;
+}
+main {
+  font-family: var(--sl-font);
+}
