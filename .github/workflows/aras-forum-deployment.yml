@@ -31,9 +31,7 @@ jobs:
         run: npm ci
 
       - name: Compile Astro Project (Staging/Pages)
-        run: npm run build
-        env:
-          DEPLOY_TARGET: 'github'
+        run: npm run build -- --target=github
 
       - name: Upload Build Artifacts
         uses: actions/upload-pages-artifact@v4
@@ -78,9 +76,7 @@ jobs:
         run: npm ci
 
       - name: Compile Astro Project (Production)
-        run: npm run build
-        env:
-          DEPLOY_TARGET: 'production'
+        run: npm run build -- --target=production
 
       - name: Upload Files to FTP Server
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5

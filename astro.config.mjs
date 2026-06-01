@@ -4,7 +4,9 @@ import starlight from '@astrojs/starlight';
 import { starlightBasePath } from "starlight-base-path";
 import starlightLinksValidator from 'starlight-links-validator'
 let site = 'http://localhost:3000'; let base = '/';
-const deployTarget = (process.env.DEPLOY_TARGET || '').trim().toLowerCase();
+const args = process.argv.slice(2);
+const targetArg = args.find(arg => arg.startsWith('--target='));
+const deployTarget = targetArg ? targetArg.split('=')[1] : ''; 
 if (deployTarget == "github") {
 	site = 'https://Just-Tamizha.github.io';
 	base = '/aras-forum/';
@@ -13,7 +15,7 @@ else if (deployTarget == "production") {
 	site = 'https://aras.pingtamizha.com';
 	base = '/';
 }
-
+console.log(`Deploy Target: ${deployTarget}, Site: ${site}, Base: ${base}`);
 // https://astro.build/config
 export default defineConfig({
 	site, base,
@@ -26,6 +28,10 @@ export default defineConfig({
 				{
 					label: 'Get Started',
 					slug: 'get-started',
+				},
+				{
+					label: 'Guides',
+					items: [{ autogenerate: { directory: 'guides' } }],
 				},
 				{
 					label: 'Reference',
