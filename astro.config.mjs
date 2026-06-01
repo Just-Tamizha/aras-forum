@@ -1,6 +1,8 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import { starlightBasePath } from "starlight-base-path";
+import starlightLinksValidator from 'starlight-links-validator'
 let site = 'http://localhost:3000'; let base = '/';
 const deployTarget = (process.env.DEPLOY_TARGET || '').trim().toLowerCase();
 if (deployTarget == "github") {
@@ -35,6 +37,7 @@ export default defineConfig({
 				'@fontsource/poppins/400.css',
 				'./src/styles/custom.css',
 			],
+			plugins: [starlightBasePath(), starlightLinksValidator()],
 		}),
 	],
 	// Port Configuration for the development server. Default is 4321
