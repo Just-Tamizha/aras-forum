@@ -2,7 +2,7 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 let site = 'http://localhost:3000'; let base = '/';
-const deployTarget = process.env.DEPLOY_TARGET;
+const deployTarget = (process.env.DEPLOY_TARGET || '').trim().toLowerCase();
 if (deployTarget == "github") {
 	site = 'https://Just-Tamizha.github.io';
 	base = '/aras-forum/';
