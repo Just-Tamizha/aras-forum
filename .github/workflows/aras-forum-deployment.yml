@@ -63,7 +63,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: production
-      url: https://aras.pingtamizha.com
+      url: ${{ secrets.DOMAIN_URL }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v6
