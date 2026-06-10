@@ -34,16 +34,16 @@ export default defineConfig({
 					items: [{ autogenerate: { directory: 'introduction' } }],
 				},
 				{
+					label: 'Development',
+					items: [{ autogenerate: { directory: 'development' } }],
+				},
+				{
 					label: 'Guides',
 					items: [{ autogenerate: { directory: 'guides' } }],
 				},
 				{
 					label: 'Reference',
 					items: [{ autogenerate: { directory: 'reference' } }],
-				},
-				{
-					label: 'Development',
-					items: [{ autogenerate: { directory: 'development' } }],
 				},
 			],
 			customCss: [
