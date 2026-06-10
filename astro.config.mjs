@@ -30,12 +30,20 @@ export default defineConfig({
 					slug: 'get-started',
 				},
 				{
+					label: 'Introduction',
+					items: [{ autogenerate: { directory: 'introduction' } }],
+				},
+				{
 					label: 'Guides',
 					items: [{ autogenerate: { directory: 'guides' } }],
 				},
 				{
 					label: 'Reference',
 					items: [{ autogenerate: { directory: 'reference' } }],
+				},
+				{
+					label: 'Development',
+					items: [{ autogenerate: { directory: 'development' } }],
 				},
 			],
 			customCss: [
@@ -47,5 +55,5 @@ export default defineConfig({
 		}),
 	],
 	// Port Configuration for the development server. Default is 4321
-	server: { port: 3000 },
+	server: { port: 4000 },
 });
